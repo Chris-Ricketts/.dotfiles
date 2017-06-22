@@ -23,3 +23,6 @@ call plug#end()
 
 " Set desired colour scheme "
 colorscheme CandyPaper 
+
+" Sudo write file shortcut " 
+ca w!! w !sudo tee ? /dev/null %

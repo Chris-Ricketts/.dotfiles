@@ -4,6 +4,7 @@ userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
+userscripts=$HOME/.config/X11/startup_scripts
 
 # merge in defaults and keymaps
 
@@ -32,13 +33,17 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+if [ -d $userscripts ] ; then
+ for f in $userscripts/?*.sh ; do
+  [ -x "$f" ] && . "$f"
+ done
+ unset f
+fi
+
 # Load VirtualBox kernel modules
 VBoxClient-all
 
 # set keyboard map
 setxkbmap gb # Great Britain
-
-# set background to the one last set with feh
-sh ~/.fehbg
 
 exec i3
