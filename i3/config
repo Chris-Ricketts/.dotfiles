@@ -1,5 +1,6 @@
-# Set modifier key
+# Set modifier keys
 set $mod Mod1
+set $sup Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -18,6 +19,13 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec urxvt
 
+# start firefox
+bindsym $sup+f exec firefox
+
+# lock computer (zsh function)
+bindsym $sup+l exec /home/chris/.config/zsh/lock_computer_i3.zsh
+
+# kill focused window
 # kill focused window
 bindsym $mod+Shift+q kill
 

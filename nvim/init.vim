@@ -17,12 +17,15 @@ Plug 'flazz/vim-colorschemes'
 Plug 'tyrannicaltoucan/vim-quantum'
 
 " Elm Lang Support"
-Plug 'lambdatoast/elm.vim'
+Plug 'elmcast/elm-vim'
 
 call plug#end()
 
 " Set desired colour scheme "
-colorscheme CandyPaper 
+colorscheme quantum 
+
+" Turn off polyglot elm "
+" let g:polyglot_disabled = ['elm']
 
 " Sudo write file shortcut " 
-ca w!! w !sudo tee ? /dev/null %
+ca w!! w !sudo tee % 
