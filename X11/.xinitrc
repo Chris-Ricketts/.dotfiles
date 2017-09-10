@@ -40,9 +40,6 @@ if [ -d $userscripts ] ; then
  unset f
 fi
 
-# Load VirtualBox kernel modules
-VBoxClient-all
-
 # set keyboard map
 setxkbmap gb # Great Britain
 
